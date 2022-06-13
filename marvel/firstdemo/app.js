@@ -27,14 +27,15 @@ console.log(hash);
    
    for (let i = 0; i < character.data.results.length; i++) {
     const ul = document.createElement("ul");
-    
-    if (character.data.results[i].description && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
-      ul.innerHTML = `<li>${character.data.results[i].name}: 
-      <br> <br>${character.data.results[i].description} 
-      <br> <br> ${character.data.results[i].thumbnail.path}.${character.data.results[i].thumbnail.extension}</li>`;
-  
-      domElement.append(ul);
+    if (character.data.results[i].description && character.data.results[i].thumbnail && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
+      ul.innerHTML = `<li> Name: ${character.data.results[i].name} 
+      <br><br> Description: ${character.data.results[i].description}
+      <br><br>
+      ${document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg"}
+      </li>`
+        domElement.append(ul);
       console.log(character.data.results);  
+      console.log(document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg");
       // console.log(character.data.results[i].thumbnail.path);
     }
    
@@ -51,7 +52,7 @@ console.log(hash);
   */
  async function getApiData() {
    try {
-	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100`);
+	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100&offset=200`);
 	 console.log(response);
 	 let character = await response.json();
 	 return character;
