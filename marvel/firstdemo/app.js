@@ -24,24 +24,34 @@ console.log(hash);
    const domElement = document.getElementById("marvel");
  
    const character = await getApiData();
-   const ul = document.createElement("ul");
-   const ul1 = document.createElement("ul");
-
-   ul.innerHTML = `<li>${character.data.results[42].name}: <br> <br >${character.data.results[42].description}</li>`;
-   ul1.innerHTML = `<li>${character.data.results[11].name}</li>`;
-
-   domElement.append(ul);
-   domElement.append(ul1);
-  console.log(character.data.results);
- }
+   
+   for (let i = 0; i < character.data.results.length; i++) {
+    const ul = document.createElement("ul");
+    
+    if (character.data.results[i].description && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
+      ul.innerHTML = `<li>${character.data.results[i].name}: 
+      <br> <br>${character.data.results[i].description} 
+      <br> <br> ${character.data.results[i].thumbnail.path}.${character.data.results[i].thumbnail.extension}</li>`;
+  
+      domElement.append(ul);
+      console.log(character.data.results);  
+      // console.log(character.data.results[i].thumbnail.path);
+    }
+   
+  //  domElement.append(ul);
+  //  console.log(character.data.results);  
+  //  console.log(character.data.results[i].thumbnail.path);
  
+   }
+}
+
  /**
   * Async function to get the data from the SWAPI api
   * @returns - returns a promise
   */
  async function getApiData() {
    try {
-	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100&offset=100`);
+	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100`);
 	 console.log(response);
 	 let character = await response.json();
 	 return character;
@@ -112,9 +122,9 @@ console.log(hash);
 // 						stats.pageCount++;
 // 						console.log("help");
 // 					}
-// 					if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) stats.pics.push(comic.thumbnail.path + "." + comic.thumbnail.extension);
+				// 	if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) {stats.pics.push(comic.thumbnail.path + "." + comic.thumbnail.extension);
 					
-// 				}
+				// }
 // 				stats.avgPrice = (stats.priceTotal/stats.priceCount).toFixed(2);
 // 				stats.avgPageCount = (stats.pageTotal/stats.pageCount).toFixed(2);
 				
