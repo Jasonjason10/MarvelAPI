@@ -14,11 +14,7 @@ let hash = CryptoJS.MD5(ts + PRIVATE_KEY + PUBLIC_KEY);
 
 console.log(hash);
 
-
-
-
-
- console.log("JavaScript is working!");
+console.log("JavaScript is working!");
 
  async function init() {
    const domElement = document.getElementById("marvel");
@@ -27,12 +23,13 @@ console.log(hash);
    
    for (let i = 0; i < character.data.results.length; i++) {
     const ul = document.createElement("ul");
-    if (character.data.results[i].description && character.data.results[i].thumbnail && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
+    if (character.data.results[i].description && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
       ul.innerHTML = `<li> Name: ${character.data.results[i].name} 
       <br><br> Description: ${character.data.results[i].description}
       <br><br>
-      ${document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg"}
+      <img src="${character.data.results[i].thumbnail.path+".jpg"}" alt="imageHere" width="250" height="250">;
       </li>`
+      //  document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg"
         domElement.append(ul);
       console.log(character.data.results);  
       console.log(document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg");
@@ -52,7 +49,7 @@ console.log(hash);
   */
  async function getApiData() {
    try {
-	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100&offset=200`);
+	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100&offset=100`);
 	 console.log(response);
 	 let character = await response.json();
 	 return character;
