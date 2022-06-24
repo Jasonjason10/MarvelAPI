@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="handlebars-v1.3.0.js"></script>
+	
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
@@ -25,7 +25,7 @@
 		<h1>Example 3 - AJAX call using Aync Await</h1>
 
 	</script>
-	<script src="app.js"></script>
+	<script src="/js/app.js"></script>
 
 
 	</body>
