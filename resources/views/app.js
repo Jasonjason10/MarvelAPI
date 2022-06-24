@@ -1,4 +1,4 @@
-import './bootstrap';
+import '../js/bootstrap';
 /* global $,console,document,Handlebars */
 
 //default not avail image
