@@ -87,7 +87,7 @@
 
 
 	</script>
-	<script type="module" src="app.js"></script>
+	<script type="module" src="/app.js"></script>
 
 
 	</body>
