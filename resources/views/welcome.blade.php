@@ -33,11 +33,11 @@ let PUBLIC_KEY = "35b4bcaa4d204fe16b1f9e255b85e622";
 let PRIVATE_KEY = "8715d5398deeb053beda5d8f7bb20da86076ae59"
 let ts = new Date().getTime();
 
-console.log(ts);
-console.log(PUBLIC_KEY);
+// console.log(ts);
+// console.log(PUBLIC_KEY);
 let hash = CryptoJS.MD5(ts + PRIVATE_KEY + PUBLIC_KEY);
 
-console.log(hash);
+// console.log(hash);
 
 console.log("JavaScript is working!");
 
