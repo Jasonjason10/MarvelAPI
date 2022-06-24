@@ -15,7 +15,7 @@ let hash = CryptoJS.MD5(ts + PRIVATE_KEY + PUBLIC_KEY);
 
 console.log(hash);
 
-console.log("JavaScript is working!");
+console.log("JavaScript is working");
 
  async function init() {
    const domElement = document.getElementById("marvel");
@@ -60,4 +60,3 @@ console.log("JavaScript is working!");
    }
  }
  init();
- 
