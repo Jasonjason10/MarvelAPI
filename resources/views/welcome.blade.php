@@ -87,7 +87,8 @@
 
 
 	</script>
-	<script resources="/js/app.js"></script>
+    <script type="text/javascript" src="{{ URL::to('/js/app.js') }}"></script>
+	<!-- <script src="js/app.js"></script> -->
 
 
 	</body>
