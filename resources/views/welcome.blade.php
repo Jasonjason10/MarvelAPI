@@ -87,7 +87,7 @@ console.log("JavaScript is working!");
 
 
 	</script>
-	<script src="/js/app.js"></script>
+	<script type="module" src="js/app.js"></script>
 
 
 	</body>
