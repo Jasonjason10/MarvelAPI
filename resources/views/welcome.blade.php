@@ -26,11 +26,11 @@
 /* global $,console,document,Handlebars */
 
 //default not avail image
-var IMAGE_NOT_AVAIL = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
+let IMAGE_NOT_AVAIL = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 
 //my key
-let PUBLIC_KEY = "35b4bcaa4d204fe16b1f9e255b85e622";
-let PRIVATE_KEY = "8715d5398deeb053beda5d8f7bb20da86076ae59"
+const PUBLIC_KEY = "35b4bcaa4d204fe16b1f9e255b85e622";
+const PRIVATE_KEY = "8715d5398deeb053beda5d8f7bb20da86076ae59"
 let ts = new Date().getTime();
 
 // console.log(ts);
