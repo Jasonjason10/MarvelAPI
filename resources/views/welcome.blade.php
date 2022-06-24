@@ -22,7 +22,7 @@
 
 	<script>
 
-import './bootstrap';
+// import './bootstrap';
 /* global $,console,document,Handlebars */
 
 //default not avail image
