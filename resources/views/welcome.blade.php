@@ -44,26 +44,26 @@ console.log("JavaScript is working!");
  async function init() {
    const domElement = document.getElementById("marvel");
 
-   const character = await getApiData();
+   const information = await getApiData();
 
-   for (let i = 0; i < character.data.results.length; i++) {
+   for (let i = 0; i < information.data.results.length; i++) {
     const ul = document.createElement("ul");
-    if (character.data.results[i].description && character.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
-      ul.innerHTML = `<li> Name: ${character.data.results[i].name}
-      <br><br> Description: ${character.data.results[i].description}
+    if (information.data.results[i].description && information.data.results[i].thumbnail.path != IMAGE_NOT_AVAIL ) {
+      ul.innerHTML = `<li> Name: ${information.data.results[i].name}
+      <br><br> Description: ${information.data.results[i].description}
       <br><br>
-      <img src="${character.data.results[i].thumbnail.path+".jpg"}" alt="imageHere" width="250" height="250">
+      <img src="${information.data.results[i].thumbnail.path+".jpg"}" alt="imageHere" width="250" height="250">
       </li>`
-      //  document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg"
+      //  document.getElementById('img').src = information.data.results[i].thumbnail.path+".jpg"
         domElement.append(ul);
-      console.log(character.data.results);
-      console.log(document.getElementById('img').src = character.data.results[i].thumbnail.path+".jpg");
-      // console.log(character.data.results[i].thumbnail.path);
+      console.log(information.data.results);
+      console.log(document.getElementById('img').src = information.data.results[i].thumbnail.path+".jpg");
+      // console.log(information.data.results[i].thumbnail.path);
     }
 
   //  domElement.append(ul);
-  //  console.log(character.data.results);
-  //  console.log(character.data.results[i].thumbnail.path);
+  //  console.log(information.data.results);
+  //  console.log(information.data.results[i].thumbnail.path);
 
    }
 }
@@ -76,8 +76,8 @@ console.log("JavaScript is working!");
    try {
 	 let response = await fetch(`https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}&limit=100&offset=600`);
 	 console.log(response);
-	 let character = await response.json();
-	 return character;
+	 let information = await response.json();
+	 return information;
    }
    catch (err) {
 	 console.error("Error: ", err);
