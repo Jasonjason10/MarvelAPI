@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<h1>Marvel API jason.</h1>
-		<p>Welcome to my api</p>
+		
 		<div id="marvel"></div>
 		<img id="img" src="" alt="imageHere" width="250" height="250">
 	<div id="results"></div>
