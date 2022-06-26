@@ -11,8 +11,9 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<h1>Marvel API jason.</h1>
-		
+		<h1>Marvel API jason</h1>
+		<p>Welcome to my API</p>
+
 		<div id="marvel"></div>
 		<img id="img" src="" alt="imageHere" width="250" height="250">
 	<div id="results"></div>
